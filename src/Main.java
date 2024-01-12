@@ -13,5 +13,9 @@ public class Main {
                 new Person("Ana", "17", "dibujar"),
                 new Person("Carlos", "29", "programar")
         );
+        List<Person> filterPerson=persons.stream()
+                .filter(person -> Integer.parseInt(person.getAge())>18)
+                .filter(person -> person.getHobby().contains("programar"))
+                .toList();
     }
 }
