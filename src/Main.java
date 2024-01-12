@@ -17,5 +17,15 @@ public class Main {
                 .filter(person -> Integer.parseInt(person.getAge())>18)
                 .filter(person -> person.getHobby().contains("programar"))
                 .toList();
+
+        List<String> names = persons.stream()
+                .map(Person::getName)
+                .toList();
+
+        List<Person> limitedPersons = persons.stream()
+                .limit(5)
+                .toList();
+
+        persons.forEach(person -> System.out.println(person.getName()));
     }
 }
